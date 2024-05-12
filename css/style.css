@@ -40,6 +40,9 @@ menu {
     font-size: 16px;
     font-weight: 700
 }
+.menu-btn:hover{
+  border-bottom: 4px solid #C15CA1;  
+}
 
 .menu-btn__alt {
     color: #FFCF2D;
@@ -67,6 +70,7 @@ main {
     border-radius: 10px;
     height: 810px;
     width: 25%;
+    position: relative;
 }
 
 .user-info {
@@ -75,6 +79,7 @@ main {
     margin: auto;
     padding: 15px 0 20px 0;
     border-bottom: 2px solid rgba(149, 100, 170, 0.2);
+    position: fixed;
 }
 
 .user-info>img {
@@ -93,11 +98,18 @@ main {
     border-radius: 5px;
     padding: 5px 10px;
     background-color: rgba(104, 70, 119, 1);
+    cursor: pointer;
+}
+
+.user-premium:hover{
+    background-color: #C15CA1;
 }
 
 .nav-side {
     display: flex;
     flex-direction: column;
+    top:220px;
+    position: fixed;
     width: 100%;
     margin-left: 15px;
 }
@@ -109,6 +121,9 @@ main {
     align-items: center;
     margin-top: 20px;
     color: black;
+}
+.btn-side:hover{
+    color: #C15CA1;
 }
 
 .btn-side>img {
