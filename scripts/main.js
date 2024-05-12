@@ -30,18 +30,26 @@ startTimer();
 
 function adjustCardWidth() {
     const container = document.querySelector('.card-container');
-    const cards = document.querySelectorAll('.card');
+    const cards = Array.from(document.querySelectorAll('.card'));
+
     const containerWidth = container.clientWidth;
     const cardWidth = cards[0].offsetWidth;
     const cardsPerRow = Math.floor(containerWidth / cardWidth);
-    let overflowCards = Array.from(cards);
 
-    overflowCards = overflowCards.slice(cardsPerRow); // Выбираем карточки, которые переносятся на следующую строку
-
-    overflowCards.forEach(card => {
-        card.classList.add('full-width');
+    cards.forEach((card, index) => {
+        if (index >= cardsPerRow) {
+            card.classList.add('full-width');
+        } else {
+            card.classList.remove('full-width');
+        }
     });
 }
+
+window.addEventListener('resize', adjustCardWidth);
+
+window.addEventListener('resize', adjustCardWidth);
+
+window.addEventListener('resize', adjustCardWidth);
 
 window.addEventListener('resize', adjustCardWidth);
 adjustCardWidth();
