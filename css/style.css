@@ -14,6 +14,18 @@ header {
     align-items: center;
 }
 
+.bg_sphere{
+    position: absolute;
+    left: 30px;
+    top: 230px;
+}
+
+.bg_sphere2 {
+    position: absolute;
+    top:170px;
+    right: 20px;
+}
+
 .nav-header {
     display: flex;
     justify-content: space-between;
@@ -403,6 +415,9 @@ main {
     .nav-header {
         width: 95%;
     }
+    .bg_sphere, .bg_sphere2{
+        display: none;
+    }
 
     header {
         height: 50px;
@@ -507,7 +522,7 @@ main {
     .slider {
         position: relative;
         overflow: hidden;
-        height: 150px;
+        height: 100px;
         margin-top: 25px;
     }
 
@@ -537,7 +552,8 @@ main {
         color: white;
         margin-right: 8vw;
     }
-    .coins{
+
+    .coins {
         color: black;
     }
 
@@ -560,12 +576,77 @@ main {
         width: 10px;
         height: 10px;
         border-radius: 50%;
-        background-color:#FFC500;
+        background-color: #FFC500;
         margin: 0 5px;
         cursor: pointer;
     }
 
     .dot.active {
         background-color: #ffe99f;
+    }
+
+    .btn-mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 5vw;
+        font-weight: 700;
+        color: black;
+        width: 100%;
+        height: 55px;
+        background: #FFCF2D;
+        border-radius: 10px;
+        margin-top: 30px;
+    }
+
+    .checkbox.style-c .checkbox__checkmark {
+        height: 5vw;
+        width: 5vw;
+        left: -4px;
+    }
+
+    .checkbox.style-c .checkbox__checkmark:after {
+        left: 7px;
+        top: 2px;
+        width: 10px;
+        height: 15px;
+    }
+
+    .checkbox.style-c {
+        margin-top: 20px;
+    }
+
+    .checkbox.style-c .checkbox__body {
+        font-size: 3vw;
+        margin-left: 2%;
+    }
+
+    .diamond-block__adaptive{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: auto;
+    }
+    .diamond-img{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 30px;
+    }
+    .diamond-content__adaptive{
+        display: flex;
+        flex-direction: column;
+    }
+    .block-diamond{
+        flex-direction: row;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .block-diamond > p{
+        width: 80%;
+        text-align: start;
+        margin-left: 10px;
+        font-size: 3.5vw;
+        color:#9564AA;;
     }
 }
