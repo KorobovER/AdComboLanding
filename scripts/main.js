@@ -77,4 +77,67 @@ document.querySelectorAll('.btn-card').forEach(btn => {
         }
     });
 });
+document.addEventListener('DOMContentLoaded', function () {
+    const slider = document.querySelector('.slider');
+    const slides = document.querySelector('.slides');
+    const slide = document.querySelectorAll('.slide');
+    const totalSlides = slide.length;
+    let currentSlide = 0;
+    let slideWidth = 100 / totalSlides;
 
+    function showSlide(index) {
+        slides.style.transform = `translateX(-${index * slideWidth}%)`;
+    }
+
+    function createNavigation() {
+        const navigation = document.querySelector('.navigation');
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('span');
+            dot.classList.add('dot');
+            if (i === 0) {
+                dot.classList.add('active');
+            }
+            dot.addEventListener('click', function () {
+                currentSlide = i;
+                showSlide(currentSlide);
+                setActiveDot(currentSlide);
+            });
+            navigation.appendChild(dot);
+        }
+    }
+
+    function setActiveDot(index) {
+        document.querySelectorAll('.dot').forEach((dot, i) => {
+            if (i === index) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    }
+
+    createNavigation();
+
+    let startX;
+    let endX;
+    slider.addEventListener('touchstart', function (e) {
+        startX = e.touches[0].clientX;
+    });
+
+    slider.addEventListener('touchend', function (e) {
+        endX = e.changedTouches[0].clientX;
+        if (endX - startX > 50) {
+            if (currentSlide > 0) {
+                currentSlide--;
+                showSlide(currentSlide);
+                setActiveDot(currentSlide);
+            }
+        } else if (startX - endX > 50) {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                showSlide(currentSlide);
+                setActiveDot(currentSlide);
+            }
+        }
+    });
+});
